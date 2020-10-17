@@ -7,7 +7,7 @@ use App\Rules\GameRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class GameController extends Controller
+class GameController
 {
     public function create(Request $request)
     {

@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ResolvedController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,5 @@ Route::middleware('auth:api')
     ->group(static function () {
         Route::post('/game', [GameController::class, 'create']);
 
-        Route::post('/game/{id}/solve', function () {
-            return 'asd';
-        });
+        Route::post('/game/{id}/solve', [ResolvedController::class, 'solve']);
     });
