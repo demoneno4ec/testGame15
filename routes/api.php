@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')
     ->group(static function () {
-        Route::post('/game', function () {
-            return '// Uses first & second middleware...';
-        });
+        Route::post('/game', [GameController::class, 'create']);
 
         Route::post('/game/{id}/solve', function () {
             return 'asd';
