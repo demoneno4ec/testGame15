@@ -21,6 +21,7 @@ class CreateResolvedTable extends Migration
             $table->id();
             $table->jsonb('steps');
             $table->foreignId('game_id');
+            $table->bigInteger('difference');
             $table->foreign('game_id')
                 ->references('id')
                 ->on('game')

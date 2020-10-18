@@ -20,7 +20,7 @@ class CreateGameTable extends Migration
 
         Schema::create($this->name, function (Blueprint $table) {
             $table->id();
-            $table->string('chars', 15);
+            $table->string('chars', 16);
             $table->foreignId('user_id');
             $table->foreign('user_id')
                 ->references('id')
